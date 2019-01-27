@@ -8,10 +8,8 @@
 package org.usfirst.frc.team6000.robot;
 
 import edu.wpi.first.wpilibj.GenericHID.Hand;
-
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
-
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -125,7 +123,7 @@ public class Robot extends IterativeRobot {
         // Punch
 		punchBackward.set(false);
 		punchForward.set(true);
-    }else{
+	}else{
         // Retract punch
     	punchForward.set(false);
     	punchBackward.set(true);
