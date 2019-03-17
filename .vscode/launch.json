@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "org.usfirst.frc.team6000.robot.Main",
+            "projectName": "2019 6000 (VSCODE)"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "frc.robot.Main",
+            "projectName": "Backup"
+        }
+    ]
+}
