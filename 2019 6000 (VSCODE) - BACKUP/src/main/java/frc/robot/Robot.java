@@ -50,7 +50,6 @@ public class Robot extends TimedRobot {
     drivetrain.drivetrain.arcadeDrive(RobotMap2.power.value * oi.XboxController.getY(Hand.kRight), RobotMap2.power.value * oi.XboxController.getX(Hand.kRight));
   
     // Punch Control
-	
     if (oi.toggleOn) {
       // Punch
       puncher.punchBackward.set(false);
