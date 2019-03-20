@@ -22,6 +22,8 @@ public enum RobotMap {
   punchBackward(1),
   // Intake Value
   intakePivot(7),
+  // Intake Roller Value
+  intakeRoller(8),
   // Limit Switch Values
   forwardLimitSwitch(1),
   backwardLimitSwitch(2);
@@ -32,3 +34,5 @@ public enum RobotMap {
     this.value = value;
   }
 }
+
+

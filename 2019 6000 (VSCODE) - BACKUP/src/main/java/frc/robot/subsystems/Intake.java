@@ -13,9 +13,11 @@ import frc.robot.RobotMap;
 
 public class Intake extends Subsystem {
     public Spark intakePivot;
+    public Spark intakeRoller;
 
     public Intake() {
         intakePivot = new Spark(RobotMap.intakePivot.value);
+        intakeRoller = new Spark(RobotMap.intakeRoller.value);
     }
 
     @Override

@@ -41,16 +41,11 @@ public class Robot extends TimedRobot {
 
     /*Controller 1*/
 
-    // Lift Controls
-    lifter.Lifter1.set(oi.XboxController1.getTriggerAxis(Hand.kRight)-oi.XboxController1.getTriggerAxis(Hand.kLeft));
-    lifter.Lifter2.set(0.3 * oi.XboxController1.getY(Hand.kLeft));
-
-    // Pivot Control
-    intake.intakePivot.set(oi.XboxController1.getX(Hand.kLeft));
+    lifter.Lifter1.set(oi.XboxController1.getY(Hand.kRight));
+    lifter.Lifter2.set(oi.XboxController1.getY(Hand.kLeft));
+        // Pivot Control
+        intake.intakePivot.set(oi.XboxController1.getTriggerAxis(Hand.kRight)-oi.XboxController1.getTriggerAxis(Hand.kLeft));
     
-    // Arcade Drive
-    drivetrain.drivetrain.arcadeDrive(RobotMap2.power.value * oi.XboxController1.getY(Hand.kRight), RobotMap2.power.value * oi.XboxController1.getX(Hand.kRight));
-  
     // Punch Control
     if (oi.toggleOn1) {
       // Punch
@@ -66,15 +61,17 @@ public class Robot extends TimedRobot {
     /*Controller 2*/
 
 
-    // Lift Controls
-    lifter.Lifter1.set(oi.XboxController2.getTriggerAxis(Hand.kRight)-oi.XboxController2.getTriggerAxis(Hand.kLeft));
-    lifter.Lifter2.set(0.3 * oi.XboxController2.getY(Hand.kLeft));
-
-    // Pivot Control
-    intake.intakePivot.set(oi.XboxController2.getX(Hand.kLeft));
+    // Intake Roller
+    intake.intakeRoller.set(oi.XboxController2.getTriggerAxis(Hand.kRight)-oi.XboxController2.getTriggerAxis(Hand.kLeft));
+    
     
     // Arcade Drive
-    drivetrain.drivetrain.arcadeDrive(RobotMap2.power.value * oi.XboxController2.getY(Hand.kRight), RobotMap2.power.value * oi.XboxController2.getX(Hand.kRight));
+//  drivetrain.drivetrain.arcadeDrive(RobotMap2.power.value * oi.XboxController2.getY(Hand.kRight), RobotMap2.power.value * oi.XboxController2.getX(Hand.kRight));
+
+    //Tank Drive
+    drivetrain.drivetrain.tankDrive(RobotMap2.power.value * oi.XboxController2.getY(Hand.kLeft), RobotMap2.power.value * oi.XboxController2.getX(Hand.kRight));
+    
+  //
 
     if (oi.toggleOn2) {
       // Punch
