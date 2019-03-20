@@ -39,18 +39,44 @@ public class Robot extends TimedRobot {
     Scheduler.getInstance().run();
     updateToggle();
 
+    /*Controller 1*/
+
     // Lift Controls
-    lifter.Lifter1.set(oi.XboxController.getTriggerAxis(Hand.kRight)-oi.XboxController.getTriggerAxis(Hand.kLeft));
-    lifter.Lifter2.set(0.3 * oi.XboxController.getY(Hand.kLeft));
+    lifter.Lifter1.set(oi.XboxController1.getTriggerAxis(Hand.kRight)-oi.XboxController1.getTriggerAxis(Hand.kLeft));
+    lifter.Lifter2.set(0.3 * oi.XboxController1.getY(Hand.kLeft));
 
     // Pivot Control
-    intake.intakePivot.set(oi.XboxController.getX(Hand.kLeft));
+    intake.intakePivot.set(oi.XboxController1.getX(Hand.kLeft));
     
     // Arcade Drive
-    drivetrain.drivetrain.arcadeDrive(RobotMap2.power.value * oi.XboxController.getY(Hand.kRight), RobotMap2.power.value * oi.XboxController.getX(Hand.kRight));
+    drivetrain.drivetrain.arcadeDrive(RobotMap2.power.value * oi.XboxController1.getY(Hand.kRight), RobotMap2.power.value * oi.XboxController1.getX(Hand.kRight));
   
     // Punch Control
-    if (oi.toggleOn) {
+    if (oi.toggleOn1) {
+      // Punch
+      puncher.punchBackward.set(false);
+      puncher.punchForward.set(true);
+    } else{
+      // Retract punch
+      puncher.punchForward.set(false);
+      puncher.punchBackward.set(true);
+    }
+
+    
+    /*Controller 2*/
+
+
+    // Lift Controls
+    lifter.Lifter1.set(oi.XboxController2.getTriggerAxis(Hand.kRight)-oi.XboxController2.getTriggerAxis(Hand.kLeft));
+    lifter.Lifter2.set(0.3 * oi.XboxController2.getY(Hand.kLeft));
+
+    // Pivot Control
+    intake.intakePivot.set(oi.XboxController2.getX(Hand.kLeft));
+    
+    // Arcade Drive
+    drivetrain.drivetrain.arcadeDrive(RobotMap2.power.value * oi.XboxController2.getY(Hand.kRight), RobotMap2.power.value * oi.XboxController2.getX(Hand.kRight));
+
+    if (oi.toggleOn2) {
       // Punch
       puncher.punchBackward.set(false);
       puncher.punchForward.set(true);
@@ -62,13 +88,22 @@ public class Robot extends TimedRobot {
   }
 
 	private void updateToggle() {
-		 if(oi.XboxController.getRawButton(1)){
-        if(!oi.togglePressed){
-            oi.toggleOn = !oi.toggleOn;
-            oi.togglePressed = true;
+		 if(oi.XboxController1.getRawButton(1)){
+        if(!oi.togglePressed1){
+            oi.toggleOn1 = !oi.toggleOn1;
+            oi.togglePressed1 = true;
         }
         }else{
-            oi.togglePressed = false;
+            oi.togglePressed1 = false;
+        }
+    
+      if(oi.XboxController2.getRawButton(1)){
+        if(!oi.togglePressed2){
+            oi.toggleOn2 = !oi.toggleOn2;
+            oi.togglePressed2 = true;
+        }
+        }else{
+            oi.togglePressed2 = false;
         }
 	}
 }

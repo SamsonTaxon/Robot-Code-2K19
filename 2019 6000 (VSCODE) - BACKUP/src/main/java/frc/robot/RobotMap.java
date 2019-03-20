@@ -12,7 +12,8 @@ public enum RobotMap {
   leftMotor(1),
   rightMotor(0),
   // Control Value
-  XboxController(0),
+  XboxController1(0),
+  XboxController2(1),
   // Lifter Values
   Lifter1(5),
   Lifter2(6),

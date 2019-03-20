@@ -11,9 +11,12 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.XboxController;
 
 public class OI {
-  public XboxController XboxController = new XboxController(RobotMap.XboxController.value);
-  public boolean toggleOn = false;
-  public boolean togglePressed = false;
+  public XboxController XboxController1 = new XboxController(RobotMap.XboxController1.value);
+  public XboxController XboxController2 = new XboxController(RobotMap.XboxController2.value);
+  public boolean toggleOn1 = false;
+  public boolean togglePressed1 = false;
+  public boolean toggleOn2 = false;
+  public boolean togglePressed2 = false;
   DigitalInput forwardLimitSwitch = new DigitalInput(RobotMap.forwardLimitSwitch.value);
   DigitalInput backwardLimitSwitch = new DigitalInput(RobotMap.backwardLimitSwitch.value);
 }
