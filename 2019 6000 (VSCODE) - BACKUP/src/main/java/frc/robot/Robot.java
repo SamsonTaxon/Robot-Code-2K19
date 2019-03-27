@@ -64,7 +64,7 @@ public class Robot extends TimedRobot {
     // Intake Roller
     intake.intakeRoller.set(oi.XboxController2.getTriggerAxis(Hand.kRight)-oi.XboxController2.getTriggerAxis(Hand.kLeft));
     
-    
+
     // Arcade Drive
 //  drivetrain.drivetrain.arcadeDrive(RobotMap2.power.value * oi.XboxController2.getY(Hand.kRight), RobotMap2.power.value * oi.XboxController2.getX(Hand.kRight));
 
